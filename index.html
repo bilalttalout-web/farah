@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#ffafbd">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>A Special Cartoon Surprise for Frayha ✨</title>
+
+  <!-- Google Fonts: Quicksand, Fredoka, Caveat, Cairo, Noto Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Noto+Sans+Arabic:wght@600;700;800;900&family=Caveat:wght@600;700&family=Fredoka:wght@600;700;800;900&family=Quicksand:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Floating Sparkles & Stars Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Top Floating Controls -->
+  <header class="top-controls">
+    <button id="btn-music-toggle" class="control-btn" aria-label="Toggle Background Music">
+      🎵 Music: Off
+    </button>
+    <button id="btn-sfx-toggle" class="control-btn active" aria-label="Toggle Sound Effects">
+      🔊 SFX: On
+    </button>
+  </header>
+
+  <!-- Main Application Wrapper -->
+  <main id="app">
+
+    <!-- ========================================================
+         SCENE 0: OPENING ANIMATED NAME & QUESTION
+         ======================================================== -->
+    <section id="scene-welcome" class="scene active" aria-label="Welcome Screen">
+      <div class="welcome-card">
+        <div class="sparkle-badge">✨ A Special Surprise For You ✨</div>
+
+        <!-- Animated Name: Frayha ✨ -->
+        <h1 class="name-container" aria-label="Frayha">
+          <span class="letter">F</span>
+          <span class="letter">r</span>
+          <span class="letter">a</span>
+          <span class="letter">y</span>
+          <span class="letter">h</span>
+          <span class="letter">a</span>
+          <span class="star-icon" title="Click me!">✨</span>
+        </h1>
+
+        <!-- Question Box (fades in after 2.4 seconds) -->
+        <div id="question-box" class="question-box">
+          <p class="teaser-text">I have a little question for you... ❤️</p>
+          <h2 class="main-question">Tell me honestly, how are you feeling today? 🥺</h2>
+
+          <!-- Interactive Choices -->
+          <div class="answers-grid">
+            <button id="btn-happy" class="choice-btn happy" aria-label="Feeling Happy">
+              <span class="btn-emoji">😊</span>
+              <span>Happy</span>
+            </button>
+            <button id="btn-sad" class="choice-btn sad" aria-label="Feeling Sad">
+              <span class="btn-emoji">🥺</span>
+              <span>Sad</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SAD SCREEN: ENGLISH ONLY COMFORTING MESSAGE
+         ======================================================== -->
+    <section id="scene-sad" class="scene" aria-label="Comforting Message">
+      <div class="sad-card">
+        <div class="peaceful-badge">🕊️ A Friendly Reminder for You</div>
+
+        <!-- English Only Comforting Message -->
+        <article class="letter-content">
+          <p class="letter-paragraph">
+            Frayha, I know that sometimes life gets difficult, and some days can feel exhausting.
+          </p>
+          <p class="letter-paragraph">
+            You don't always have to pretend that everything is okay. It's completely fine to feel sad sometimes.
+          </p>
+          <p class="letter-paragraph">
+            If you ever need someone to talk to, someone to listen, or simply someone to make you laugh, I'm always here.
+          </p>
+          <p class="letter-paragraph">
+            Remember that you're not alone. You have a friend who cares about you and wishes to see you happy again.
+          </p>
+          <p class="letter-paragraph">
+            Take your time, stay strong, and never forget that you deserve happiness.
+          </p>
+          <p class="letter-paragraph letter-signature">
+            Your friend, Bilal ❤️
+          </p>
+        </article>
+
+        <!-- Pulsing Climax Button -->
+        <div class="click-here-container">
+          <button id="btn-friendship-surprise" class="btn-friendship-surprise" aria-label="Click for friendship surprise">
+            <span>Click Here ❤️</span>
+          </button>
+        </div>
+
+        <!-- Final Reveal Surprise Modal / Box -->
+        <div id="final-surprise-box" class="final-surprise-box">
+          <p class="final-message-quote">
+            "I'm always here whenever you need me. ✨"
+          </p>
+          <div class="final-made-with-love">
+            Your friend, Bilal ❤️
+          </div>
+
+          <div class="button-row" style="margin-top: 18px;">
+            <button id="btn-sad-to-happy" class="btn-action">
+              <span>Cartoon Series</span> 😂
+            </button>
+            <button id="btn-sad-restart" class="btn-action secondary">
+              <span>Back to Start</span> 🔄
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        Made with appreciation by Bilal ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 1: OMAR VS BILAL CARTOON FIGHT
+         ======================================================== -->
+    <section id="scene-happy" class="scene" aria-label="Cartoon Fight Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">🥊 الحلقة 1: مضاربة عمر وبلال 🥊</span>
+
+        <!-- The Cartoon Battle Arena -->
+        <div class="cartoon-ring">
+          <div id="anime-speed-lines"></div>
+
+          <div id="burst-pow" class="comic-burst pow">POW! 💥</div>
+          <div id="burst-wow" class="comic-burst wow">WOW! 🌟</div>
+          <div id="burst-boom" class="comic-burst boom">BOOM! ⚡</div>
+
+          <!-- Massive Cartoon Dust Cloud -->
+          <div id="massive-dust-cloud">
+            <div class="dust-puff puff-1"></div>
+            <div class="dust-puff puff-2"></div>
+            <div class="dust-puff puff-3"></div>
+            <div class="dust-puff puff-4"></div>
+            <div class="dust-puff puff-5"></div>
+
+            <div class="dust-silhouettes">
+              <span class="brawl-shadow s1">🥊</span>
+              <span class="brawl-shadow s2">💥</span>
+              <span class="brawl-shadow s3">⚡</span>
+            </div>
+
+            <div class="flying-limb pop1">🥊</div>
+            <div class="flying-limb pop2">👟</div>
+            <div class="flying-limb pop3">⭐</div>
+          </div>
+
+          <!-- Character: Omar -->
+          <div id="char-box-omar" class="character-box char-omar">
+            <div id="omar-bubble" class="speech-bubble">
+              فرح جربيني عفاك!
+            </div>
+            <div class="char-name-tag">Omar 🥊</div>
+            <div id="dizzy-stars-omar" class="dizzy-stars">⭐💫✨</div>
+            <div id="omar-svg-wrap"></div>
+          </div>
+
+          <!-- Character: Bilal -->
+          <div id="char-box-bilal" class="character-box char-bilal">
+            <div id="bilal-bubble" class="speech-bubble">
+              أجي جربني أنا!
+            </div>
+            <div id="bilal-bubble-roast" class="speech-bubble">
+              قالك أفرح جربيني، مكيحشمش هدا! 😂😂
+            </div>
+            <div class="char-name-tag">Bilal 😎</div>
+            <div id="bilal-svg-wrap"></div>
+          </div>
+
+          <!-- Character: Frayha -->
+          <div id="char-box-frayha" class="character-box char-frayha">
+            <div id="frayha-bubble" class="speech-bubble">
+              وي بلال ربح! 😂
+            </div>
+            <div class="char-name-tag">Frayha 🌸</div>
+            <div id="frayha-svg-wrap"></div>
+          </div>
+
+          <div class="ring-ground"></div>
+        </div>
+
+        <!-- Fight Result Announcement -->
+        <div id="fight-result-box" class="fight-result-box">
+          <h2 class="winner-headline">HAHAHAHA! Bilal wins! 😂🏆</h2>
+          <p class="winner-subtext">المهم هو ديما تبقاي ضاحكة يا فرح! ✨</p>
+
+          <div class="button-row">
+            <button id="btn-scene1-to-2" class="btn-action">
+              <span>الحلقة 2: قسم الامتحان</span> 📝😂
+            </button>
+            <button id="btn-replay-fight" class="btn-action secondary">
+              <span>عاود المضاربة</span> 🥊
+            </button>
+            <button id="btn-happy-restart" class="btn-action secondary">
+              <span>البداية</span> 🔄
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 2: THE CLASSROOM EXAM 😂
+         ======================================================== -->
+    <section id="scene-classroom" class="scene" aria-label="Classroom Exam Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">📝 الحلقة 2: قسم الامتحان 📝</span>
+
+        <!-- Classroom Arena -->
+        <div class="classroom-arena">
+          <!-- Blackboard with Anatomy Doodles -->
+          <div class="classroom-blackboard">
+            <span>📚 EXAM: ANATOMY</span>
+            <span class="board-doodle">Anatomy = 💀?</span>
+            <span>⏰ 08:30 AM</span>
+          </div>
+
+          <!-- Teacher Standing in Front -->
+          <div id="c2-teacher-box" class="character-box char-teacher" style="position: absolute; left: 15px; bottom: 20px;">
+            <div id="c2-teacher-bubble" class="speech-bubble" dir="rtl" style="left: -10px; max-width: 155px;">
+              واش بصح كينقل؟! 😠📝
+            </div>
+            <div class="char-name-tag">الأستاذ 👓</div>
+            <div id="c2-teacher-wrap"></div>
+          </div>
+
+          <!-- Students Desk: Omar and Bilal sitting together -->
+          <div class="classroom-exam-desk">
+            <div class="exam-paper">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="exam-paper">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <!-- Omar Sitting at Desk -->
+          <div id="c2-omar-box" class="character-box char-omar" style="position: absolute; left: 32%; bottom: 20px;">
+            <div id="c2-omar-bubble" class="speech-bubble" dir="rtl" style="left: -20px; max-width: 175px;">
+              بلال، شناهو تعريف اناتومي؟
+            </div>
+            <div class="char-name-tag">Omar 📝</div>
+            <div id="c2-omar-wrap"></div>
+          </div>
+
+          <!-- Bilal Sitting at Desk -->
+          <div id="c2-bilal-box" class="character-box char-bilal" style="position: absolute; left: 54%; bottom: 20px;">
+            <div id="c2-bilal-bubble" class="speech-bubble" dir="rtl" style="right: -25px; max-width: 195px;">
+              أستاذ! أستاذ! هذا كينقل مني، عفاك نوضو من حدايا! 😂
+            </div>
+            <div class="char-name-tag">Bilal 🙋‍♂️</div>
+            <div id="c2-bilal-wrap"></div>
+          </div>
+
+          <!-- Frayha Clapping by the Door/Desk -->
+          <div id="c2-frayha-box" class="character-box char-frayha" style="position: absolute; right: 10px; bottom: 20px; display: none;">
+            <div id="c2-frayha-bubble" class="speech-bubble" dir="rtl" style="right: -10px; max-width: 150px;">
+              برافو بلال! 😂👏👏
+            </div>
+            <div class="char-name-tag">Frayha 🌸</div>
+            <div id="c2-frayha-wrap"></div>
+          </div>
+
+          <div class="ring-ground" style="background: #94a3b8; border-top-color: #64748b;"></div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="c2-result-box" class="scene-result-box">
+          <h2 class="winner-headline">بلال الشماتة قودها على عمر! 😂📝</h2>
+          <p class="winner-subtext">عمر مسكين باغي غير يعرف اناتومي صدق خارج من القسم هههههه! 💀</p>
+
+          <div class="button-row">
+            <button id="btn-scene2-to-3" class="btn-action">
+              <span>الحلقة 3: ساحة المدرسة</span> 🏫😂
+            </button>
+            <button id="btn-replay-classroom" class="btn-action secondary">
+              <span>عاود المشهد</span> 🔄
+            </button>
+            <button id="btn-scene2-to-1" class="btn-action secondary">
+              <span>الحلقة 1</span> 🥊
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 3: THE SCHOOL COURTYARD 😂
+         ======================================================== -->
+    <section id="scene-courtyard" class="scene" aria-label="School Courtyard Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">🏫 الحلقة 3: ساحة المدرسة 🏫</span>
+
+        <!-- Courtyard Arena -->
+        <div class="courtyard-arena">
+          <!-- School Building Backdrop -->
+          <div class="courtyard-building">
+            <div class="courtyard-window"></div>
+            <div class="courtyard-window"></div>
+            <div class="courtyard-window"></div>
+            <div class="courtyard-window"></div>
+          </div>
+
+          <!-- The 5 Friends Gathering -->
+          <div id="c3-boys-group" style="position: absolute; left: 10px; bottom: 18px; display: flex; gap: 4px; align-items: flex-end; z-index: 10;">
+            <!-- Bilal -->
+            <div class="character-box char-bilal">
+              <div id="c3-boys-bubble" class="speech-bubble" dir="rtl" style="left: 10px; top: -75px; max-width: 185px;">
+                مديرة! مديرة! ممكن النمرة؟ 😂
+              </div>
+              <div id="c3-comfort-bubble" class="speech-bubble" dir="rtl" style="left: 10px; top: -75px; max-width: 195px;">
+                وااا فرح، متبكيش، غا كنضحكو! 😂
+              </div>
+              <div class="char-name-tag">Bilal 😎</div>
+              <div id="c3-bilal-wrap"></div>
+            </div>
+
+            <!-- Taha -->
+            <div class="character-box" style="position: relative;">
+              <div class="char-name-tag" style="background: #dcfce7; color: #15803d; border-color: #86efac;">Taha 🧢</div>
+              <div id="c3-taha-wrap"></div>
+            </div>
+
+            <!-- Omar -->
+            <div class="character-box char-omar">
+              <div class="char-name-tag">Omar 😂</div>
+              <div id="c3-omar-wrap"></div>
+            </div>
+          </div>
+
+          <!-- Frayha in Courtyard -->
+          <div id="c3-frayha-box" class="character-box char-frayha" style="position: absolute; left: 54%; bottom: 18px; z-index: 15;">
+            <div id="c3-frayha-bubble" class="speech-bubble" dir="rtl" style="right: -20px; max-width: 165px;">
+              حشومة عليكم علاش كتضحكو عليا! 😭😭
+            </div>
+            <div class="char-name-tag">Frayha 🌸</div>
+            <div id="c3-frayha-wrap"></div>
+          </div>
+
+          <!-- The Principal (المديرة التيتزة) -->
+          <div id="c3-principal-box" class="character-box char-principal">
+            <div id="c3-principal-bubble" class="speech-bubble principal-bubble" dir="rtl">
+              سيرو عند فرح، راه هي المديرة، كتجي تحل المدرسة مع 8 ديال الصباح! 😂
+            </div>
+            <div class="char-name-tag">المديرة التيتزة 💅</div>
+            <div id="c3-principal-wrap"></div>
+          </div>
+
+          <div class="ring-ground"></div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="c3-result-box" class="scene-result-box">
+          <h2 class="winner-headline">المديرة قصفات فرح قصف ثلاثي الأبعاد! 😂💅</h2>
+          <p class="winner-subtext">فرح مسكينة جاية مع 8 ديال الصباح تحل الباب والكل كيضحك هههههه! 😭😂</p>
+
+          <div class="button-row">
+            <button id="btn-scene3-to-4" class="btn-action">
+              <span>الحلقة 4: بلال وفرح</span> 💬😂
+            </button>
+            <button id="btn-replay-courtyard" class="btn-action secondary">
+              <span>عاود المشهد</span> 🔄
+            </button>
+            <button id="btn-scene3-to-2" class="btn-action secondary">
+              <span>الحلقة 2</span> 📝
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 4: BILAL AND FRAYHA 😂
+         ======================================================== -->
+    <section id="scene-dialogue" class="scene" aria-label="Bilal and Frayha Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">💬 الحلقة 4: بلال وفرح 💬</span>
+
+        <!-- Cozy Dialogue Arena -->
+        <div class="dialogue-arena">
+          <div id="c4-confetti"></div>
+
+          <!-- Cozy Park Bench in Background -->
+          <div class="cozy-bench"></div>
+
+          <!-- Bilal Character -->
+          <div id="c4-bilal-box" class="character-box char-bilal" style="position: absolute; left: 24%; bottom: 22px;">
+            <!-- Line 1 -->
+            <div id="c4-b1" class="speech-bubble" dir="rtl" style="left: -15px; max-width: 175px;">
+              فرح، بغيت ليك شي حاجة.
+            </div>
+            <!-- Line 3 -->
+            <div id="c4-b2" class="speech-bubble" dir="rtl" style="left: -15px; max-width: 160px;">
+              أنا حشمان منك.
+            </div>
+            <!-- Line 5 -->
+            <div id="c4-b3" class="speech-bubble" dir="rtl" style="left: -20px; max-width: 205px;">
+              دبا أنا بحالا وليت كنحس بشي حاجة.
+            </div>
+            <!-- Line 7: Punchline -->
+            <div id="c4-b4" class="speech-bubble" dir="rtl" style="left: -25px; top: -80px; max-width: 195px;">
+              لا لا، كنحس بالجوع! 😂😂
+            </div>
+
+            <div class="char-name-tag">Bilal 😎</div>
+            <div id="c4-bilal-wrap"></div>
+          </div>
+
+          <!-- Frayha Character -->
+          <div id="c4-frayha-box" class="character-box char-frayha" style="position: absolute; right: 24%; bottom: 22px;">
+            <!-- Line 2 -->
+            <div id="c4-f1" class="speech-bubble" dir="rtl" style="right: -15px; max-width: 145px;">
+              نعام دبا؟
+            </div>
+            <!-- Line 4 -->
+            <div id="c4-f2" class="speech-bubble" dir="rtl" style="right: -15px; max-width: 155px;">
+              غنقول أزمر! 😂
+            </div>
+            <!-- Line 6 -->
+            <div id="c4-f3" class="speech-bubble" dir="rtl" style="right: -25px; max-width: 195px;">
+              باش كتحس مثلا بالقطعة؟ 😂
+            </div>
+
+            <div class="char-name-tag">Frayha 🌸</div>
+            <div id="c4-frayha-wrap"></div>
+          </div>
+
+          <div class="ring-ground" style="background: #15803d; border-top-color: #166534;"></div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="c4-result-box" class="scene-result-box">
+          <h2 class="winner-headline">ههههههههه كنحس بالجوع! 🍔😂😂</h2>
+          <p class="winner-subtext">المهم هو ديما تبقاي ضاحكة وفرحانة يا فرح! ❤️✨</p>
+
+          <div class="button-row">
+            <button id="btn-scene4-replay-all" class="btn-action">
+              <span>عاود السلسلة من الأول</span> 🎬🔄
+            </button>
+            <button id="btn-scene4-to-sad" class="btn-action secondary">
+              <span>Comforting Message</span> 💌
+            </button>
+            <button id="btn-scene4-restart" class="btn-action secondary">
+              <span>البداية</span> 🏠
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

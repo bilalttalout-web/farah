@@ -1,0 +1,290 @@
+/* ============================================================
+   ANIMATIONS & KEYFRAMES - FRAYHA & BILAL CARTOON SERIES
+   ============================================================ */
+
+/* Floating & Drifting */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(4deg); }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.03); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 143, 163, 0.4), 0 0 50px rgba(179, 136, 235, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 143, 163, 0.7), 0 0 80px rgba(179, 136, 235, 0.4);
+    transform: scale(1.025);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* Opening Name Letter Glow */
+@keyframes letterDropGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.6) rotate(-10deg);
+    filter: blur(8px);
+    text-shadow: 0 0 50px #ff8fa3;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(6px) scale(1.15) rotate(3deg);
+    filter: blur(0px);
+    text-shadow: 0 0 30px #ff8fa3, 0 0 60px #b388eb;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0px);
+    text-shadow: 0 0 15px rgba(255, 143, 163, 0.8), 0 0 35px rgba(179, 136, 235, 0.5);
+  }
+}
+
+/* Comic Effects Animations */
+@keyframes comicPopIn {
+  0% { opacity: 0; transform: scale(0.1) rotate(-35deg); }
+  65% { opacity: 1; transform: scale(1.35) rotate(15deg); }
+  80% { transform: scale(0.9) rotate(-5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* Shakes */
+@keyframes screenShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-6px, 4px) rotate(-1deg); }
+  40% { transform: translate(6px, -4px) rotate(1deg); }
+  60% { transform: translate(-4px, -3px) rotate(-0.5deg); }
+  80% { transform: translate(4px, 3px) rotate(0.5deg); }
+}
+
+@keyframes heavyScreenShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-14px, 10px) rotate(-2.5deg); }
+  25% { transform: translate(14px, -10px) rotate(2.5deg); }
+  40% { transform: translate(-12px, -8px) rotate(-1.5deg); }
+  55% { transform: translate(12px, 8px) rotate(2deg); }
+  70% { transform: translate(-8px, 5px) rotate(-1deg); }
+  85% { transform: translate(6px, -3px) rotate(0.8deg); }
+}
+
+@keyframes violentGroundShake {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  20% { transform: translateY(-7px) scaleY(1.04); }
+  40% { transform: translateY(6px) scaleY(0.96); }
+  60% { transform: translateY(-5px) scaleY(1.03); }
+  80% { transform: translateY(4px) scaleY(0.97); }
+}
+
+/* Anime Speed Lines Flash */
+@keyframes animeSpeedFlash {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+/* Dust Cloud Crazy Swirl & Pulsing */
+@keyframes dustCloudRage {
+  0% { transform: scale(0.85) rotate(0deg); }
+  25% { transform: scale(1.12) rotate(6deg); }
+  50% { transform: scale(0.95) rotate(-6deg); }
+  75% { transform: scale(1.15) rotate(4deg); }
+  100% { transform: scale(0.85) rotate(0deg); }
+}
+
+@keyframes dustPuffWobble {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  33% { transform: scale(1.18) translate(-12px, -8px); }
+  66% { transform: scale(0.92) translate(10px, 6px); }
+}
+
+@keyframes silhouetteBrawl {
+  0% { transform: translate(-20px, 0) scale(1) rotate(0deg); opacity: 0.8; }
+  25% { transform: translate(25px, -18px) scale(1.2) rotate(25deg); opacity: 1; }
+  50% { transform: translate(-25px, 15px) scale(0.85) rotate(-20deg); opacity: 0.6; }
+  75% { transform: translate(18px, -10px) scale(1.1) rotate(15deg); opacity: 0.9; }
+  100% { transform: translate(-20px, 0) scale(1) rotate(0deg); opacity: 0.8; }
+}
+
+@keyframes flyingLimbPop {
+  0% { opacity: 0; transform: scale(0.3) translate(0, 0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.25) translate(var(--limb-x, 30px), var(--limb-y, -30px)) rotate(var(--limb-r, 45deg)); }
+  100% { opacity: 0; transform: scale(0.8) translate(calc(var(--limb-x, 30px) * 1.5), calc(var(--limb-y, -30px) * 1.5)) rotate(calc(var(--limb-r, 45deg) * 1.5)); }
+}
+
+/* Character Idle & Taunt */
+@keyframes characterIdleBounce {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50% { transform: translateY(-6px) scale(0.99, 1.01); }
+}
+
+@keyframes characterTauntOmar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(-5deg); }
+  75% { transform: translateY(-5px) rotate(4deg); }
+}
+
+@keyframes characterTauntBilal {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  30% { transform: translateY(-12px) rotate(4deg) scale(1.04); }
+  70% { transform: translateY(-3px) rotate(-2deg) scale(1); }
+}
+
+/* Clashing Dash into Dust Cloud */
+@keyframes omarChargeToCenter {
+  0% { transform: translateX(0) scale(1); }
+  40% { transform: translateX(40px) scale(1.12) rotate(10deg); }
+  100% { transform: translateX(95px) scale(0.6) rotate(20deg); opacity: 0; }
+}
+
+@keyframes bilalChargeToCenter {
+  0% { transform: translateX(0) scale(1); }
+  40% { transform: translateX(-40px) scale(1.12) rotate(-10deg); }
+  100% { transform: translateX(-95px) scale(0.6) rotate(-20deg); opacity: 0; }
+}
+
+/* Omar Dramatic Defeat */
+@keyframes omarDefeatedFloor {
+  0% { opacity: 0; transform: translateY(-30px) rotate(-85deg) scale(0.8); }
+  60% { opacity: 1; transform: translateY(12px) rotate(-105deg) scale(1.04); }
+  80% { transform: translateY(6px) rotate(-98deg) scale(0.98); }
+  100% { opacity: 1; transform: translateY(10px) rotate(-100deg) scale(1); }
+}
+
+@keyframes bilalVictoryEmergence {
+  0% { opacity: 0; transform: scale(0.6) translateY(20px); }
+  60% { opacity: 1; transform: scale(1.14) translateY(-12px) rotate(3deg); }
+  80% { transform: scale(0.98) translateY(0px) rotate(-2deg); }
+  100% { opacity: 1; transform: scale(1.05) translateY(-3px) rotate(0deg); }
+}
+
+/* Frayha Pop In */
+@keyframes frayhaPopIn {
+  0% { opacity: 0; transform: translateY(50px) scale(0.5) rotate(-10deg); }
+  65% { opacity: 1; transform: translateY(-10px) scale(1.1) rotate(5deg); }
+  85% { transform: translateY(3px) scale(0.98) rotate(-2deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+@keyframes dizzyOrbit {
+  0% { transform: rotate(0deg) translateX(28px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(28px) rotate(-360deg); }
+}
+
+@keyframes dustVanish {
+  0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+  100% { opacity: 0; transform: scale(1.35); filter: blur(10px); }
+}
+
+@keyframes starBurstParticle {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.3) rotate(0deg); }
+  60% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(var(--rot)); }
+  100% { opacity: 0; transform: translate(calc(var(--tx) * 1.25), calc(var(--ty) * 1.25 + 30px)) scale(0.8) rotate(calc(var(--rot) * 1.5)); }
+}
+
+/* ============================================================
+   SCENE 2: CLASSROOM EXAM
+   ============================================================ */
+@keyframes teacherScanning {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  30% { transform: translateX(-10px) rotate(-2deg); }
+  70% { transform: translateX(10px) rotate(2deg); }
+}
+
+@keyframes teacherSurprisedShock {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) translateY(-14px) rotate(-6deg); }
+  50% { transform: scale(1.08) translateY(-4px) rotate(4deg); }
+  75% { transform: scale(1.15) translateY(-8px) rotate(-3deg); }
+  100% { transform: scale(1.12) translateY(-5px) rotate(0deg); }
+}
+
+@keyframes omarWhispering {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10px, -4px) rotate(6deg); }
+}
+
+@keyframes bilalSnitchHandRaise {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-22px) scale(1.14) rotate(-6deg); }
+  70% { transform: translateY(-12px) scale(1.08) rotate(3deg); }
+  100% { transform: translateY(-18px) scale(1.1) rotate(0deg); }
+}
+
+@keyframes frayhaClappingHappy {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-12px) scale(1.1) rotate(-4deg); }
+  75% { transform: translateY(-5px) scale(1.04) rotate(4deg); }
+}
+
+/* ============================================================
+   SCENE 3: COURTYARD & PRINCIPAL (NO TEXT FLIPPING!)
+   ============================================================ */
+@keyframes principalCatwalk {
+  0% { transform: translateX(130%) scale(1); }
+  40% { transform: translateX(15%) scale(1); }
+  70% { transform: translateX(-8%) scale(1.03); }
+  100% { transform: translateX(-15%) scale(1); }
+}
+
+/* Character SVG alone turns around without flipping text */
+@keyframes principalCharacterTurn {
+  0% { transform: scaleX(1); }
+  50% { transform: scaleX(0.1); }
+  100% { transform: scaleX(-1); }
+}
+
+@keyframes boysFollowHop {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(12px) translateY(-10px) rotate(4deg); }
+  75% { transform: translateX(20px) translateY(-5px) rotate(-2deg); }
+}
+
+@keyframes crowdLaughingBobs {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-10px) scale(1.06, 0.95) rotate(3deg); }
+  50% { transform: translateY(2px) scale(0.97, 1.03); }
+  75% { transform: translateY(-7px) scale(1.04, 0.96) rotate(-3deg); }
+}
+
+@keyframes frayhaAnimeCryingFountain {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-8px) scale(0.96, 1.04) rotate(-2deg); }
+  70% { transform: translateY(3px) scale(1.03, 0.97) rotate(2deg); }
+}
+
+/* ============================================================
+   SCENE 4: BILAL AND FRAYHA
+   ============================================================ */
+@keyframes bilalShyFidget {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-3deg); }
+  75% { transform: translateY(-2px) rotate(3deg); }
+}
+
+@keyframes frayhaCuriousHeadTilt {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(5deg) scale(1.03); }
+}
+
+@keyframes dramaticAnimeSpotlight {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 209, 102, 0.4)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 25px rgba(255, 209, 102, 0.9)); transform: scale(1.03); }
+}
+
+@keyframes bigBellyLaughBurst {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  20% { transform: translateY(-14px) scale(1.12, 0.92) rotate(-5deg); }
+  40% { transform: translateY(3px) scale(0.94, 1.08) rotate(5deg); }
+  60% { transform: translateY(-10px) scale(1.1, 0.94) rotate(-3deg); }
+  80% { transform: translateY(2px) scale(0.97, 1.04) rotate(3deg); }
+}
