@@ -29,6 +29,9 @@
 
   <!-- Top Floating Controls -->
   <header class="top-controls">
+    <button id="btn-episodes-menu" class="control-btn" aria-label="Select Episode">
+      🎬 Episodes
+    </button>
     <button id="btn-music-toggle" class="control-btn" aria-label="Toggle Background Music">
       🎵 Music: Off
     </button>
@@ -36,6 +39,24 @@
       🔊 SFX: On
     </button>
   </header>
+
+  <!-- Episodes Quick Navigation Drawer -->
+  <div id="episodes-drawer" class="episodes-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title">🎬 الحلقات والمسرحيات الكوميدية</span>
+      <button id="btn-close-drawer" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <button class="drawer-item" data-scene="welcome">🏠 البداية (Welcome)</button>
+      <button class="drawer-item" data-scene="sad">💌 رسالة خاصة (Comforting Letter)</button>
+      <button class="drawer-item" data-scene="happy">🥊 الحلقة 1: مضاربة عمر وبلال</button>
+      <button class="drawer-item" data-scene="classroom">📝 الحلقة 2: قسم الامتحان</button>
+      <button class="drawer-item" data-scene="courtyard">🏫 الحلقة 3: ساحة المدرسة</button>
+      <button class="drawer-item" data-scene="dialogue">💬 الحلقة 4: بلال وفرح</button>
+      <button class="drawer-item featured" data-scene="porsche">🏎️ الحلقة 5: بورش بلال في مراكش (جديد 🔥)</button>
+      <button class="drawer-item featured" data-scene="farah-angry">😡 الحلقة 6: فرح معصبة على بلال وطه (جديد 🔥)</button>
+    </div>
+  </div>
 
   <!-- Main Application Wrapper -->
   <main id="app">
@@ -478,13 +499,187 @@
           <p class="winner-subtext">المهم هو ديما تبقاي ضاحكة وفرحانة يا فرح! ❤️✨</p>
 
           <div class="button-row">
-            <button id="btn-scene4-replay-all" class="btn-action">
-              <span>عاود السلسلة من الأول</span> 🎬🔄
+            <button id="btn-scene4-to-5" class="btn-action">
+              <span>الحلقة 5: بورش بلال في مراكش</span> 🏎️🌴
+            </button>
+            <button id="btn-scene4-replay-all" class="btn-action secondary">
+              <span>عاود المشهد</span> 🔄
             </button>
             <button id="btn-scene4-to-sad" class="btn-action secondary">
               <span>Comforting Message</span> 💌
             </button>
             <button id="btn-scene4-restart" class="btn-action secondary">
+              <span>البداية</span> 🏠
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 5: FARAH AND BILAL'S PORSCHE IN MARRAKECH 🏎️🌴
+         ======================================================== -->
+    <section id="scene-porsche" class="scene" aria-label="Porsche in Marrakech Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">🏎️ الحلقة 5: بورش بلال في مراكش 🌴</span>
+
+        <!-- Marrakech Street Arena -->
+        <div class="porsche-arena">
+          <!-- Marrakech Architectural Backdrop -->
+          <div class="marrakech-cityscape">
+            <div class="marrakech-wall">
+              <div class="moroccan-arch"></div>
+              <div class="moroccan-arch"></div>
+              <div class="moroccan-arch center-arch">
+                <span class="arch-inscription">مراكش الحمراء ☀️</span>
+              </div>
+              <div class="moroccan-arch"></div>
+              <div class="moroccan-arch"></div>
+            </div>
+
+            <!-- Marrakech Palm Trees in Background -->
+            <div class="marrakech-palm-trees">
+              <span class="palm-tree p1">🌴</span>
+              <span class="palm-tree p2">🌴</span>
+              <span class="palm-tree p3">🌴</span>
+              <span class="palm-tree p4">🌴</span>
+            </div>
+
+            <!-- Authentic Bus Stop Sign -->
+            <div class="marrakech-bus-stop" id="porsche-bus-stop">
+              <div class="bus-stop-sign">
+                <span class="bus-icon">🚏</span>
+                <span class="bus-text">طوبيس مراكش</span>
+                <span class="bus-line">LIGNE 16</span>
+              </div>
+              <div class="bus-stop-bench"></div>
+            </div>
+          </div>
+
+          <!-- Speed lines during Porsche drive -->
+          <div id="porsche-speed-lines" class="porsche-speed-lines"></div>
+
+          <!-- Character: Farah Waiting at Bus Stop -->
+          <div id="porsche-char-farah" class="character-box char-frayha" style="position: absolute; left: 16%; bottom: 22px; z-index: 15;">
+            <div id="porsche-farah-bubble" class="speech-bubble" dir="rtl" style="left: -20px; top: -85px; max-width: 210px;">
+              آش هاد الحياة هادي؟ كل نهار طوبيس وطوبيس! طلع ليا طوبيس فراسي! بغيت طونبيل، غير شي طونبيل وشوية!
+            </div>
+            <div class="char-name-tag">Farah 🌸</div>
+            <div id="porsche-farah-wrap"></div>
+          </div>
+
+          <!-- Bilal's Luxurious Porsche Sports Car -->
+          <div id="porsche-car-box" class="porsche-container" style="position: absolute; left: 24%; bottom: 15px; z-index: 22;">
+            <div id="porsche-bilal-bubble" class="speech-bubble" dir="rtl" style="left: 100px; top: -85px; max-width: 220px;">
+              آ فرح! فين غادية؟
+            </div>
+            <div id="porsche-car-wrap"></div>
+          </div>
+
+          <!-- Donkey Cart for the Hilarious Twist Ending -->
+          <div id="porsche-donkey-box" class="donkey-cart-container" style="position: absolute; right: 15px; bottom: 16px; z-index: 25; display: none;">
+            <div class="speech-bubble" dir="rtl" style="right: 10px; top: -70px; max-width: 140px; background: #fef3c7; border-color: #d97706; color: #92400e;">
+              ههه كرويلة النعناع! 🐴🌿
+            </div>
+            <div id="porsche-donkey-wrap"></div>
+          </div>
+
+          <!-- Road Ground Surface with Lane Markings -->
+          <div class="porsche-road-ground">
+            <div class="road-dashed-lines"></div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="porsche-result-box" class="scene-result-box">
+          <h2 class="winner-headline">البورش وحلات ورا كرويلة فكليز! 😂🐴🏎️</h2>
+          <p class="winner-subtext">بلال جا يفوخ بالبورش صدق محبوس مع مول النعناع هههههه! 🌿😂😂</p>
+
+          <div class="button-row">
+            <button id="btn-scene5-to-6" class="btn-action">
+              <span>الحلقة 6: فرح معصبة على بلال وطه</span> 😡🏃‍♂️
+            </button>
+            <button id="btn-replay-porsche" class="btn-action secondary">
+              <span>عاود المشهد</span> 🏎️🔄
+            </button>
+            <button id="btn-scene5-to-4" class="btn-action secondary">
+              <span>الحلقة 4</span> 💬
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        صاوبها ليك صاحبك بلال ✨
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         SCENE 6: FARAH GETS ANGRY AT BILAL AND TAHA 😡🏃‍♂️
+         ======================================================== -->
+    <section id="scene-farah-angry" class="scene" aria-label="Farah Angry Scene">
+      <div class="cartoon-card">
+        <span class="scene-title-badge">😡 الحلقة 6: فرح معصبة على بلال وطه 🏃‍♂️</span>
+
+        <!-- Moroccan Square / Neighborhood Arena -->
+        <div class="angry-arena">
+          <!-- Moroccan Neighborhood Wall with Lanterns -->
+          <div class="neighborhood-backdrop">
+            <div class="moroccan-lantern l1">🏮</div>
+            <div class="moroccan-window-frame"></div>
+            <div class="moroccan-lantern l2">🏮</div>
+          </div>
+
+          <!-- Character 1: Farah (Angry / Chasing with Slipper) -->
+          <div id="angry-char-farah" class="character-box char-frayha" style="position: absolute; left: 14%; bottom: 20px; z-index: 20;">
+            <div id="angry-farah-bubble" class="speech-bubble" dir="rtl" style="left: -20px; top: -85px; max-width: 200px;">
+              نتوما بجوج! واش ما عندكم ما تديرو غير المشاكل؟
+            </div>
+            <div class="char-name-tag">Farah 🌸</div>
+            <div id="angry-farah-wrap"></div>
+          </div>
+
+          <!-- Character 2: Bilal -->
+          <div id="angry-char-bilal" class="character-box char-bilal" style="position: absolute; left: 45%; bottom: 20px; z-index: 18;">
+            <div id="angry-bilal-bubble" class="speech-bubble" dir="rtl" style="right: -20px; top: -85px; max-width: 190px;">
+              آ فرح، مالك؟ آش وقع؟
+            </div>
+            <div class="char-name-tag">Bilal 😎</div>
+            <div id="angry-bilal-wrap"></div>
+          </div>
+
+          <!-- Character 3: Taha -->
+          <div id="angry-char-taha" class="character-box" style="position: absolute; right: 14%; bottom: 20px; z-index: 16;">
+            <div id="angry-taha-bubble" class="speech-bubble" dir="rtl" style="right: -25px; top: -85px; max-width: 185px;">
+              والله حتى حنا ما درنا والو!
+            </div>
+            <div class="char-name-tag" style="background: #dcfce7; color: #15803d; border-color: #86efac;">Taha 🧢</div>
+            <div id="angry-taha-wrap"></div>
+          </div>
+
+          <div class="ring-ground" style="background: #e2e8f0; border-top-color: #94a3b8;"></div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="angry-result-box" class="scene-result-box">
+          <h2 class="winner-headline">الشكلاط هو الحل ديما ههههههه! 🍫😂😂</h2>
+          <p class="winner-subtext">بلال وطه طلقو رجليهم للريح ولكن الشكلاط و200 درهم سلكو الموقف! ❤️✨</p>
+
+          <div class="button-row">
+            <button id="btn-replay-angry" class="btn-action">
+              <span>عاود المشهد</span> 🏃‍♂️🔄
+            </button>
+            <button id="btn-angry-replay-all" class="btn-action secondary">
+              <span>عاود السلسلة كاملة</span> 🎬
+            </button>
+            <button id="btn-angry-to-porsche" class="btn-action secondary">
+              <span>بورش مراكش</span> 🏎️
+            </button>
+            <button id="btn-angry-restart" class="btn-action secondary">
               <span>البداية</span> 🏠
             </button>
           </div>
